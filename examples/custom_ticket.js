@@ -31,7 +31,7 @@ let time = getTime();
 device.open((err) => {
   printer
     .model('custompos')
-    .init()
+      .hardware('INIT')
     .font('A')
     .align('CT')
     .style('BU')
