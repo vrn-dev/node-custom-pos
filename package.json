@@ -1,0 +1,29 @@
+{
+  "name": "node-custom-pos",
+  "version": "0.0.1",
+  "description": "CustomBIZ ESC/POS Printer driver for nodejs",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-dev/node-custom-pos.git"
+  },
+  "author": "vrn-dev",
+  "license": "MIT",
+  "dependencies": {
+    "iconv-lite": "*",
+    "mutable-buffer": "*"
+  },
+  "optionalDependencies": {
+    "get-pixels": "*",
+    "serialport": "*",
+    "qr-image": "*",
+    "usb": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
