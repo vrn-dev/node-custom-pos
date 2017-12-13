@@ -57,3 +57,4 @@ device.open((err) => {
   console.log(err)
 
 });
+device.close();
