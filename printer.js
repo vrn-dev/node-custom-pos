@@ -690,7 +690,8 @@ Printer.prototype.cut = function (part, feed) {
       part ? 'PAPER_PART_CUT' : 'PAPER_FULL_CUT'
       ]);
   }
-  return this.flush();
+    //return this.flush();
+    return this;
 };
 
 /**
