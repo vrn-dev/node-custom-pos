@@ -57,4 +57,4 @@ device.open((err) => {
   console.log(err)
 
 });
-device.close();
+process.exit(0);
