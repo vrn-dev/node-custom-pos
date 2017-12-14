@@ -28,6 +28,17 @@ function getTime() {
 
 let time = getTime();
 
+function constructBarcode() {
+    let dt = new Date();
+    let day = padWithZero(dt.getDate());
+    let month = padWithZero(dt.getMonth() + 1);
+    let year = dt.getFullYear().toString().slice(2);
+    let hour = padWithZero(dt.getHours());
+    let min = padWithZero(dt.getMinutes());
+    let sec = padWithZero(dt.getSeconds());
+    return day.toString() + month.toString() + year + hour.toString() + min.toString() + sec.toString();
+}
+
 device.open((err) => {
     printer
         .model('custompos')
@@ -37,12 +48,14 @@ device.open((err) => {
         .style('BU')
         .size(2, 2)
         .print('RoninTech Parking')
+        .feed()
         .style('NORMAL')
         .size(1, 1)
-        .barcode('121217114234', 'EAN13')
+        .barcode(constructBarcode(), 'EAN13')
         .feed()
         .feed()
         .print(date)
+        .feed()
         .print(time)
         .feed()
         .feed()
@@ -55,8 +68,5 @@ device.open((err) => {
         .style('I')
         .print('Thank You')
         .cut()
-        .cut()
         .close();
-    console.log(err)
-
 });
